@@ -4,6 +4,7 @@ import (
     "net/http"
     "html/template"
     "log"
+    "packages/config"
 )
 
 var RES_PATH = "/home/davis_chen/golang_softball/res"
@@ -15,6 +16,7 @@ func main() {
         t := template.New("index.html");
         t,_ = t.ParseFiles(HTTP_PATH + "/index.html");
         t.Execute(w, nil);
+        config.GetConfig("config/default.json");
     })
     http.HandleFunc("/pic/", func(w http.ResponseWriter, r *http.Request) {
         log.Printf("%s", RES_PATH + r.URL.Path[0:])

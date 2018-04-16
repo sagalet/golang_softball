@@ -1,0 +1,15 @@
+{
+    "port" : 80,
+    "path" : "/home/davis_chen/golang_softball",
+    "category" : {
+        "index" : {
+            "path" : "/html"
+        },
+        "pic" : {
+            "path" : "/res/pic"
+        },
+        "js" : {
+            "path" : "/js"
+        }
+    }
+}
