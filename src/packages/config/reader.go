@@ -6,8 +6,7 @@ import (
     "encoding/json"
 )
 
-func GetConfig(path string) *serverConfig{
-    log.Println("this is config.GetConfig ", path)
+func GetConfig(path string) *serverConfig {
     file, err := os.Open(path)
     if(err != nil) {
         log.Println(err)
@@ -35,4 +34,13 @@ func GetConfig(path string) *serverConfig{
     log.Println(c);
 
     return &c
+}
+
+func GetByteArray(config *serverConfig) []byte {
+    b, err := json.Marshal(config);
+    if(err != nil) {
+        log.Println("GetByteArray convert failed");
+        return nil;
+    }
+    return b;
 }
